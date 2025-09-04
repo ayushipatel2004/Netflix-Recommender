@@ -8,7 +8,7 @@ import os
 # Load recommender
 # Always resolve path relative to repo root
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # goes up from /app to project root
-DATA_PATH = os.path.join(BASE_DIR, "data", "netflix_titles.csv")
+DATA_PATH = os.path.join(BASE_DIR, "Data", "netflix_titles.csv")
 
 from src.recommendation import NetflixRecommender
 rec = NetflixRecommender(DATA_PATH)
