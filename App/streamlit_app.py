@@ -2,7 +2,12 @@
 
 import streamlit as st
 import matplotlib.pyplot as plt
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from src.recommendation import NetflixRecommender
+
 import plotly.express as px
 import requests
 
