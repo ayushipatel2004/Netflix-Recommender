@@ -2,11 +2,6 @@
 
 import streamlit as st
 import matplotlib.pyplot as plt
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-from src.recommendation import NetflixRecommender
 
 import plotly.express as px
 import requests
@@ -84,6 +79,13 @@ def get_poster(title):
 
 # Load recommender
 import os
+
+# Always resolve path relative to repo root
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # goes up from /app to project root
+DATA_PATH = os.path.join(BASE_DIR, "data", "netflix_titles.csv")
+
+from src.recommendation import NetflixRecommender
+rec = NetflixRecommender(DATA_PATH)
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "netflix_titles.csv")
 rec = NetflixRecommender(DATA_PATH)
