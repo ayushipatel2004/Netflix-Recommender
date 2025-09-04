@@ -1,10 +1,18 @@
 
-
 import streamlit as st
 import matplotlib.pyplot as plt
-
 import plotly.express as px
 import requests
+import os
+
+# Load recommender
+# Always resolve path relative to repo root
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # goes up from /app to project root
+DATA_PATH = os.path.join(BASE_DIR, "data", "netflix_titles.csv")
+
+from src.recommendation import NetflixRecommender
+rec = NetflixRecommender(DATA_PATH)
+
 
 # Inject custom CSS for Netflix-style theme
 st.markdown(
@@ -77,18 +85,6 @@ def get_poster(title):
     return None
 
 
-# Load recommender
-import os
-
-# Always resolve path relative to repo root
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # goes up from /app to project root
-DATA_PATH = os.path.join(BASE_DIR, "data", "netflix_titles.csv")
-
-from src.recommendation import NetflixRecommender
-rec = NetflixRecommender(DATA_PATH)
-
-DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "netflix_titles.csv")
-rec = NetflixRecommender(DATA_PATH)
 
 
 st.set_page_config(page_title="Netflix Dashboard", page_icon="📺", layout="wide")
