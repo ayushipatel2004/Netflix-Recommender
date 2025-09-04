@@ -83,7 +83,11 @@ def get_poster(title):
 
 
 # Load recommender
-rec = NetflixRecommender("data/netflix_titles.csv")
+import os
+
+DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "netflix_titles.csv")
+rec = NetflixRecommender(DATA_PATH)
+
 
 st.set_page_config(page_title="Netflix Dashboard", page_icon="📺", layout="wide")
 st.title("📺 Netflix Dashboard")
