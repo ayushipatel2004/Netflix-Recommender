@@ -3,7 +3,8 @@
 This project is a simple data exploration and visualization of the **Netflix Titles Dataset** using **Pandas** and **Matplotlib** in Python.
 
 ---
-
+## 🚀 Live Demo
+🔗 **[Click here to try the app](https://netflix-recommender-whattowatch.streamlit.app/)**
 ## 📂 Dataset
 
 - **Source**: [Kaggle - Netflix Shows](https://www.kaggle.com/datasets/shivamb/netflix-shows)
